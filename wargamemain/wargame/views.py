@@ -1,13 +1,13 @@
-from flask import render_template, Blueprint, request
+from flask import render_template, Blueprint
+from wargamemain.wargame.forms import Answer
+from wargamemain import db
 
-
+questions = db.Table('import_test', db.metadata, autoload=True, autoload_with=db.engine)
 game = Blueprint('game', __name__)
 
 
-questions = {'1':'pytanie pierwsze', '2':'pytanie drugie', '3':'Pytanie trzecie'}
-
 @game.route('/wargame', methods=['GET','POST'])
 def wargame():
-    for i in questions.keys():
-        q = questions[i]
-    return render_template('wargame.html', q=q)
+    form = Answer()
+    results = db.session.query(questions).where()
+    return render_template('wargame.html', results=results, form=form)
