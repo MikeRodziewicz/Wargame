@@ -1,21 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for item in results%}
-{{ form.hidden_tag() }}
- <div class="container">
-  <div class="form-group">
-     <p>{{item.q_text}}</p>
-    <div class="form-check form-check-inline">
-     <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-     <label class="form-check-label" for="inlineCheckbox1">Bardzo</label>
-   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option2">
-     <label class="form-check-label" for="inlineCheckbox1">Nie bardzo</label>
- <br>
-  </div>
-   </div>
-{% endfor%}
+<p>Odpowiedz na pytania</p>
+
+<form method="POST">
+    {{ form.hidden_tag()}}
+    <p>miejsce na pytanie</p>
+    {{form.question_1()}}
+    <p>miejsce na pytanie</p>
+    {{form.question_2()}}
+    <p>miejsce na pytanie</p>
+    {{form.question_3()}}
+    <br>
+    {{form.submit()}}
+</form>
+
 {% endblock %}
-
-
-</div>
