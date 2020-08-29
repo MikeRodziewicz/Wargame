@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'my_secret'
 
-
 from wargamemain.core.views import core
 from wargamemain.promotion.views import promotion
 from wargamemain.error_pages.handlers import error_pages
