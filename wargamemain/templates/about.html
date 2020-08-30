@@ -9,4 +9,13 @@
     Your browser does not support the video tag.
   </video>
 
+
+<form method="POST">
+    {{ form.hidden_tag()}}
+    {{form.name.label}}{{form.name()}}
+    {{form.email.label}}{{form.email()}}
+    {{form.title.label}}{{form.title()}}
+    {{form.message.label}}{{form.message()}}
+    {{form.submit()}}
+</form>
 {% endblock %}
