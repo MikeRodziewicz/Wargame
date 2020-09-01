@@ -1,11 +1,17 @@
 from flask import Flask
-import os
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+from flask_mail import Mail
 
 app = Flask(__name__)
 
+
 app.config['SECRET_KEY'] = 'my_secret'
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_USERNAME"] = 'xxx'
+app.config["MAIL_PASSWORD"] = 'xxx'
+mail = Mail(app)
+
 
 from wargamemain.core.views import core
 from wargamemain.promotion.views import promotion
