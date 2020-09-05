@@ -5,9 +5,9 @@
 
 <form method="POST">
     {{ form.hidden_tag()}}
-    <p>miejsce na pytanie</p>
+    {{form.question_1.label}}
     {{form.question_1()}}
-     <p>miejsce na pytanie</p>
+       {{form.question_2.label}}
     {{form.question_2()}}
     <p>miejsce na pytanie</p>
     {{form.question_3()}}
