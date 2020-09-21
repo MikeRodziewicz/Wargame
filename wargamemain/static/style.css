@@ -86,3 +86,9 @@ footer p {
     text-align: center;
     padding: 2rem 0;
     font-size: 2rem;
+    }
+
+
+video {
+    display: inline block;
+}

@@ -1,25 +1,29 @@
-{% extends "base.html" %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href={{ url_for('static', filename="style.css")}}>
+    <title>TyClasses</title>
+</head>
+<body>
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container-fluid">
+<nav>
+    <ul>
+        <li><a href="{{url_for('core.index')}}">strona główna</a></li>
+        <li><a href="{{url_for('promotion.about')}}">o nas</a></li>
+        <li><a href="{{url_for('core.info')}}">kontakt</a></li>
+        <li><a href="{{url_for('game.wargame')}}">demo: wikingowie</a></li>
+    </ul>
+</nav>
+<main>
+<div class="videos">
 <video width="320" height="240" controls>
-    <source src={{ url_for('static', filename="test.mp4") }} type="video/mp4">
+    <source src={{url_for('static', filename="test.mp4")}} type="video/mp4">
     Your browser does not support the video tag.
-  </video>
-
-{% for mess in get_flashed_messages() %}
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-  <button type="button" class="fade close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-    {{ mess }}
-</div>y
-
-{% endfor %}
+</video>
 </div>
-    </div>
+</main>
+
 
 <form method="POST">
     {{ form.hidden_tag()}}
@@ -28,4 +32,14 @@
 </form>
 
 
-{% endblock %}
+<div class="wrapper">
+
+
+<footer>
+    <p>Zapraszamy</p>
+
+</footer>
+
+</div>
+</body>
+</html>
